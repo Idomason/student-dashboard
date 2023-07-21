@@ -37,7 +37,7 @@ const Header = () => {
           </li>
         </ul>
 
-        <div className='bg-[#4A0F54] px-3 py-2 rounded-full text-xs cursor-pointer hover:text-purple-400'>
+        <div className='bg-[#4A0F54] px-3 py-2 rounded-full text-xs cursor-pointer hover:text-[#E6DFF1]'>
           <p className=''>Log Out</p>
         </div>
       </nav>
