@@ -4,7 +4,7 @@ const NewsAndIdeas = () => {
   return (
     <div className=''>
       <h2 className='text-lg mt-20 mb-6 text-center'>Latest News and Ideas</h2>
-      <div className='grid grid-col-1 place-items-center md:grid-cols-2 md:gap-y-14 md:gap-x-8 lg:grid-cols-3 gap-16'>
+      <div className='grid grid-col-1 place-items-center md:gap-y-14 md:gap-x-8 lg:grid-cols-3 gap-16'>
         <div className='w-[260px] h-[157px] rounded-[14px] rounded-bl-none rounded-br-none bg-[#292929]'>
           <div className='p-6 flex flex-col items-center justify-center gap-3 pb-3'>
             <h3 className='text-[#FF6300] text-lg font-bold self-start'>

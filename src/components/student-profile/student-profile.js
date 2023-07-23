@@ -10,7 +10,7 @@ const StudentProfile = (props) => {
         <IntroHeader key={datum.id} name={datum.name} />
       ))}
       {/* <div><VideoPlayer /></div> */}
-      <Blog />
+      <Blog className='w-screen h-' />
       {/* <div className='flex flex-col items-center ml-3 md:ml-6'></div> */}
     </div>
   );

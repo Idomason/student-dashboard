@@ -6,7 +6,7 @@ const Jobs = () => {
 
     <div className=''>
       <h2 className='text-lg mt-10 lg:mt-0 mb-4 text-center'>Latest Jobs</h2>
-      <div className='grid place-items-center md:grid-cols-2 md:gap-y-14 md:gap-x-8 lg:grid-cols-3 gap-16'>
+      <div className='grid place-items-center md:gap-y-14 md:gap-x-8 lg:grid-cols-3 gap-16'>
         <div className='w-[260px] h-[157px] rounded-[14px] rounded-bl-none rounded-br-none bg-[#292929]'>
           <div className='p-6 flex flex-col items-center justify-center gap-3 pb-3'>
             <h3 className='text-[#FF6300] text-lg font-bold self-start'>
