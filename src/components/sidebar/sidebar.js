@@ -15,7 +15,7 @@ const Sidebar = ({ image, name, id }) => {
         />
       </div>
       <div className='flex flex-col items-center justify-center'>
-        <div className='p-[0.25rem] w-[120px] h-[120px] bg-gradient-to-b from-[#4A0F54] to-[#FF6300] rounded-full'>
+        <div className='p-[0.25rem] w-[120px] h-[120px] bg-gradient-to-r from-[#4A0F54] to-[#FF6300] rounded-full'>
           <Image
             src={image}
             alt='student passport'
@@ -31,22 +31,22 @@ const Sidebar = ({ image, name, id }) => {
           ID: <span className='flex text-[#FF6300] pl-1'> {id}</span>
         </p>
         <div className='py-2 text-[#4A0F54] flex'>
-          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full'>
+          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full hover:cursor-pointer'>
             <FaGooglePlusG size={'1rem'} />
           </div>
-          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full'>
+          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full hover:cursor-pointer'>
             <SlSocialDribbble size={'1rem'} />
           </div>
-          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full'>
+          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full hover:cursor-pointer'>
             <AiOutlineTwitter size={'1rem'} />
           </div>
-          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full'>
+          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full hover:cursor-pointer'>
             <AiOutlineGoogle size={'1rem'} />
           </div>
-          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full'>
+          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full hover:cursor-pointer'>
             <SlSocialVkontakte size={'1rem'} />
           </div>
-          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full'>
+          <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full hover:cursor-pointer'>
             <SlSocialDribbble size={'1rem'} />
           </div>
         </div>

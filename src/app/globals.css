@@ -4,7 +4,7 @@
 
 @layer utilities {
   .bgGrad {
-    @apply bg-gradient-to-r from-[#4A0F54] to-[#FF6300];
+    @apply bg-gradient-to-r from-[#4A0F54] from-35% to-[#FF6300] to-70%;
   }
 }
 
