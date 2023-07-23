@@ -5,7 +5,7 @@ import { FaGooglePlusG } from 'react-icons/fa';
 
 const Sidebar = ({ image, name, id }) => {
   return (
-    <div className='w-screen md:w-[300px] md:min-h-screen bg-white rounded-r-[63px] shadow-2xl overflow-hidden'>
+    <div className='w-screen md:w-[300px] md:h-full bg-white rounded-r-[63px] shadow-2xl overflow-hidden'>
       <div className='flex items-center justify-center mb-4'>
         <Image
           src={'/assets/Creative-Mansion-logo.png'}

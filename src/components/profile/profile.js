@@ -1,10 +1,9 @@
-import Intro from '../intro/intro';
 import Sidebar from '../sidebar/sidebar';
 
 const Profile = (props) => {
   //   console.log('Props', props);
   return (
-    <div>
+    <div className='h-full'>
       {props.data.map((datum) => {
         return (
           <div key={datum.id}>
