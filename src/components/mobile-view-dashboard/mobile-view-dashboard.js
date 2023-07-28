@@ -8,19 +8,15 @@ const dancingScript = Dancing_Script({
   subsets: ['latin'],
 });
 
-const Sidebar = ({ image, name, id }) => {
+const MobileViewDashboard = ({ id, image, name, toggle }) => {
   return (
-    <div className='w-screen hidden md:block md:absolute md:top-0 md:left-0 md:w-[300px] h-full bg-white rounded-r-[63px] shadow-2xl overflow-hidden z-10'>
-      <div className='flex items-center justify-center my-4'>
-        <Image
-          src={'/assets/Creative-Mansion-logo.png'}
-          width={70}
-          height={30}
-          alt='Logo'
-        />
-      </div>
+    <div
+      className={`w-screen ${
+        toggle ? '' : 'hidden'
+      } md:absolute md:top-0 md:left-0 bottom-0 md:w-[300px] md:hidden block absolute top-[62px] left-0 bg-white shadow-2xl`}
+    >
       <div className='flex flex-col items-center justify-center'>
-        <div className='p-[0.25rem] w-[120px] h-[120px] bg-gradient-to-r from-[#4A0F54] to-[#FF6300] rounded-full'>
+        <div className='p-[0.25rem] mt-2 w-[120px] h-[120px] bg-gradient-to-r from-[#4A0F54] to-[#FF6300] rounded-full'>
           <Image
             src={image}
             alt='student passport'
@@ -89,4 +85,4 @@ const Sidebar = ({ image, name, id }) => {
   );
 };
 
-export default Sidebar;
+export default MobileViewDashboard;

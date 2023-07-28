@@ -3,7 +3,7 @@ import TodayDate from '../../../utils/date/date';
 
 const IntroHeader = ({ name }) => {
   return (
-    <div className='w-auto h-auto leading-3 md:max-w-full md:grid grid-cols-2 hidden lg:grid-cols-2 p-5 rounded-xl bg-black text-white place-items-center mb-10 mx-3'>
+    <div className='w-full h-auto leading-3 grid grid-cols-2 lg:grid-cols-2 p-5 rounded-xl bg-black text-white place-items-center mb-10'>
       <h3 className='place-self-start text-sm lg:text-xl'>
         Welcome back, {name.firstName}!
       </h3>

@@ -3,7 +3,7 @@ import Sidebar from '../sidebar/sidebar';
 const Profile = (props) => {
   //   console.log('Props', props);
   return (
-    <div className='h-full'>
+    <div className=''>
       {props.data.map((datum) => {
         return (
           <div key={datum.id}>
