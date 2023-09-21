@@ -1,19 +1,17 @@
-'use client';
-
 import MobileViewDashboard from '../mobile-view-dashboard/mobile-view-dashboard';
 
-export default function Mobile(props) {
+export default function Mobile({ data, toggle, toggleForm, setIsToggleForm }) {
   return (
     <div className=''>
-      {props.data.map((datum) => {
+      {data.map((datum) => {
         const { id, name, image } = datum;
         return (
           <div key={id}>
             <MobileViewDashboard
-              id={id}
-              name={name}
-              image={image}
-              toggle={props.toggle}
+              {...datum}
+              toggle={toggle}
+              toggleForm={toggleForm}
+              setIsToggleForm={setIsToggleForm}
             />
           </div>
         );

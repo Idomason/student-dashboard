@@ -8,12 +8,19 @@ const dancingScript = Dancing_Script({
   subsets: ['latin'],
 });
 
-const MobileViewDashboard = ({ id, image, name, toggle }) => {
+const MobileViewDashboard = ({
+  id,
+  image,
+  name,
+  toggle,
+  toggleForm,
+  setIsToggleForm,
+}) => {
   return (
     <div
       className={`w-screen ${
         toggle ? '' : 'hidden'
-      } md:absolute md:top-0 md:left-0 bottom-0 md:w-[300px] md:hidden block absolute top-[62px] left-0 bg-white shadow-2xl`}
+      } md:absolute md:top-0 md:left-0 bottom-0 md:w-[300px] md:hidden block absolute top-[62px] left-0 bg-white shadow-2xl transition-all duration-300 ease-in-out delay-100`}
     >
       <div className='flex flex-col items-center justify-center'>
         <div className='p-[0.25rem] mt-2 w-[120px] h-[120px] bg-gradient-to-r from-[#4A0F54] to-[#FF6300] rounded-full'>
@@ -57,7 +64,12 @@ const MobileViewDashboard = ({ id, image, name, toggle }) => {
               Dashboard
             </p>
           </div>
-          <div className='p-3 w-screen text-[#4A0F54] bg-[#F1F1F1] hover:bgGrad hover:text-white cursor-pointer'>
+          <div
+            className={`p-3 w-screen text-secondary bg-bgMain ${
+              toggleForm === 2 ? 'bgGrad text-white' : ''
+            } hover:bgGrad hover:text-white cursor-pointer`}
+            onClick={() => setIsToggleForm((toggleForm) => (toggleForm = 2))}
+          >
             <p className='text-md uppercase text-center'>Edit Profile</p>
           </div>
           <div className='p-3 w-screen text-[#4A0F54] bg-[#F1F1F1] hover:bgGrad hover:text-white cursor-pointer'>

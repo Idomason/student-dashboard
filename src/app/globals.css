@@ -4,7 +4,10 @@
 
 @layer utilities {
   .bgGrad {
-    @apply bg-gradient-to-r from-[#4A0F54] md:from-35% to-[#FF6300] md:to-70%;
+    @apply bg-gradient-to-r from-secondary md:from-35% to-primary md:to-70%;
+  }
+  .active {
+    @apply bgGrad text-white;
   }
 }
 
