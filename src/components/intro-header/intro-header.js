@@ -1,11 +1,12 @@
 'use client';
-import TodayDate from '../../../utils/date/date';
+import TodayDate from '../../helper/date/date';
 
-const IntroHeader = ({ name }) => {
+const IntroHeader = ({ users }) => {
   return (
-    <div className='mx-2 md:ml-24 lg:ml-0 h-auto leading-3 grid grid-cols-2 lg:grid-cols-2 p-5 rounded-xl bg-black text-white place-items-center mb-10'>
+    // md:ml-24 | lg:ml-0
+    <div className='lg:w-full md:w-3/4 w-4/5 mx-2 leading-3 grid grid-cols-2 lg:grid-cols-2 p-5 rounded-xl bg-black text-white place-items-center mb-10'>
       <h3 className='place-self-start text-sm lg:text-xl'>
-        Welcome back, {name.firstName}!
+        Welcome back, {users.map((user) => user.firstName)}!
       </h3>
       <h3 className='place-self-end text-sm lg:text-xl md:leading-3'>
         Student Dashboard

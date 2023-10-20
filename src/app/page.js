@@ -1,35 +1,45 @@
 'use client';
 
-import { useState } from 'react';
-
 import { Inter } from '@next/font/google';
-import data from '../../public/data/data.json';
 import Main from '@/components/main/main';
 import Sidebar from '@/components/sidebar/sidebar';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 const inter = Inter({
   subsets: ['latin'],
 });
 
+// getUsers();
 export default function Home() {
-  const [toggleForm, setIsToggleForm] = useState(1);
-  const [post, setPost] = useState(false);
+  const [users, setUsers] = useState([]);
+  console.log(users);
 
-  // function handleFromToggle() {
-  //   setIsToggleForm(!toggleForm);
-  // }
+  useEffect(() => {
+    async function getUsers() {
+      const res = await axios.get('api/users');
+      console.log(res.data);
+      setUsers(res.data.data);
+    }
+    getUsers();
+  }, []);
+
   return (
     <main
-      className={`h-full flex justify-between bg-bgMain  ${inter.className} overflow-x-hidden`}
+      className={`h-screen flex justify-between bg-bgMain overflow-x-hidden`}
     >
-      <Sidebar
-        data={data}
-        // handleFromToggle={handleFromToggle}
+      {/* <Sidebar
+        users={users}
+        handleFromToggle={handleFromToggle}
         toggleForm={toggleForm}
         setIsToggleForm={setIsToggleForm}
       />
-      <Main toggleForm={toggleForm} setIsToggleForm={setIsToggleForm} />
-      {/* toggle={query} data={data} */}
+      <Main
+        users={users}
+        toggleForm={toggleForm}
+        setIsToggleForm={setIsToggleForm}
+      />{' '}
+      toggle={query} data={data}*/}
     </main>
   );
 }

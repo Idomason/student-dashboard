@@ -1,16 +1,23 @@
 import Profile from '../profile/profile';
 
-const Sidebar = ({ data, handleFromToggle, toggleForm, setIsToggleForm }) => {
+const Sidebar = ({
+  users,
+  handleFromToggle,
+  toggleForm,
+  setIsToggleForm,
+  logout,
+}) => {
   return (
-    <div className='overflow-hidden'>
-      {data.map((datum) => {
+    <div className='md:w-1/2 overflow-hidden'>
+      {users.map((user) => {
         return (
-          <div key={datum.id}>
+          <div key={user._id}>
             <Profile
-              {...datum}
+              {...user}
               handleFromToggle={handleFromToggle}
               toggleForm={toggleForm}
               setIsToggleForm={setIsToggleForm}
+              logout={logout}
             />
           </div>
         );

@@ -9,32 +9,55 @@
   .active {
     @apply bgGrad text-white;
   }
-}
 
-/* :root {
-  --font: 'Inter', sans-serif;
-} */
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px #4747470b;
+    backdrop-filter: blur(7.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    @apply border-4 border-gray-50 shrink-0 h-full w-1/3 pt-4 rounded-3xl min-w-max;
+  }
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  .profileImg {
+    @apply border-4 border-gray-100 w-[135px] rounded-full shadow-lg cursor-pointer;
+    @apply hover:border-gray-200;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .textbox {
+    @apply border-0 px-5 py-2 rounded-xl w-3/4 shadow-sm text-lg;
+    @apply focus:outline-none;
+  }
+
+  .btn {
+    @apply border bg-indigo-500 w-3/4 px-4 py-2 rounded-lg text-gray-50 text-xl shadow-sm text-center;
+  }
+
+  .btn:hover {
+    background-color: #ff6a6a;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.pageBg {
+  background: #dcdce6;
+  background-image: url('/assets/Background.png');
+}
+
+input[type='file'] {
+  display: none;
+}
+
+/* .glassProfile {
+  @apply .glass;
+  @apply h-5/6 w-5/6;
+}
+
+.profileImgProfile {
+  @apply profileImg;
+  @apply w-40 cursor-pointer;
+}
+
+.textbox {
+  @apply textbox;
+  @apply w-3/4;
 } */

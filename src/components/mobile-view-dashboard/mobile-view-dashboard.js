@@ -13,9 +13,36 @@ const MobileViewDashboard = ({
   image,
   name,
   toggle,
+  onToggle,
   toggleForm,
   setIsToggleForm,
 }) => {
+  function handleDashboard() {
+    setIsToggleForm(1);
+    onToggle((toggle) => !toggle);
+  }
+
+  function handleEditProfile() {
+    setIsToggleForm(2);
+    onToggle((toggle) => !toggle);
+  }
+  function handleClasses() {
+    setIsToggleForm(3);
+    onToggle((toggle) => !toggle);
+  }
+  function handleMaterials() {
+    setIsToggleForm(4);
+    onToggle((toggle) => !toggle);
+  }
+  function handlePostIdeas() {
+    setIsToggleForm(5);
+    onToggle((toggle) => !toggle);
+  }
+  function handleAllIdeas() {
+    setIsToggleForm(6);
+    onToggle((toggle) => !toggle);
+  }
+
   return (
     <div
       className={`w-screen ${
@@ -59,34 +86,57 @@ const MobileViewDashboard = ({
           </div>
         </div>
         <div className='w-screen py-2 flex flex-col gap-2 items-center justify-center'>
-          <div className='w-screen p-3 bgGrad cursor-pointer'>
-            <p className='text-md text-white uppercase text-center'>
-              Dashboard
-            </p>
+          <div
+            className={`p-2 w-screen text-secondary bg-bgMain ${
+              toggleForm === 1 ? 'bgGrad text-white' : ''
+            } hover:bgGrad hover:text-white cursor-pointer`}
+            onClick={handleDashboard}
+          >
+            <p className='text-xs uppercase text-center'>Dashboard</p>
           </div>
           <div
-            className={`p-3 w-screen text-secondary bg-bgMain ${
+            className={`p-2 w-screen text-secondary bg-bgMain ${
               toggleForm === 2 ? 'bgGrad text-white' : ''
             } hover:bgGrad hover:text-white cursor-pointer`}
-            onClick={() => setIsToggleForm((toggleForm) => (toggleForm = 2))}
+            onClick={handleEditProfile}
           >
-            <p className='text-md uppercase text-center'>Edit Profile</p>
+            <p className='text-xs uppercase text-center'>Edit Profile</p>
           </div>
-          <div className='p-3 w-screen text-[#4A0F54] bg-[#F1F1F1] hover:bgGrad hover:text-white cursor-pointer'>
-            <p className='text-md uppercase text-center'>Classes</p>
+          <div
+            className={`p-2 w-screen text-secondary bg-bgMain ${
+              toggleForm === 3 ? 'bgGrad text-white' : ''
+            } hover:bgGrad hover:text-white cursor-pointer`}
+            onClick={handleClasses}
+          >
+            <p className='text-xs uppercase text-center'>Classes</p>
           </div>
-          <div className='p-3 w-screen text-[#4A0F54] bg-[#F1F1F1] hover:bgGrad hover:text-white cursor-pointer'>
-            <p className='text-md uppercase text-center'>Materials</p>
+          <div
+            className={`p-2 w-screen text-secondary bg-bgMain ${
+              toggleForm === 4 ? 'bgGrad text-white' : ''
+            } hover:bgGrad hover:text-white cursor-pointer`}
+            onClick={handleMaterials}
+          >
+            <p className='text-xs uppercase text-center'>Materials</p>
           </div>
-          <div className='p-3 w-screen text-[#4A0F54] bg-[#F1F1F1] hover:bgGrad hover:text-white cursor-pointer'>
-            <p className='text-md uppercase text-center'>Post Ideas</p>
+          <div
+            className={`p-2 w-screen text-secondary bg-bgMain ${
+              toggleForm === 5 ? 'bgGrad text-white' : ''
+            } hover:bgGrad hover:text-white cursor-pointer`}
+            onClick={handlePostIdeas}
+          >
+            <p className='text-xs uppercase text-center'>Post Ideas</p>
           </div>
-          <div className='p-3 w-screen text-[#4A0F54] bg-[#F1F1F1] hover:bgGrad hover:text-white cursor-pointer'>
-            <p className='text-md uppercase text-center'>All Ideas</p>
+          <div
+            className={`p-2 w-screen text-secondary bg-bgMain ${
+              toggleForm === 6 ? 'bgGrad text-white' : ''
+            } hover:bgGrad hover:text-white cursor-pointer`}
+            onClick={handleAllIdeas}
+          >
+            <p className='text-xs uppercase text-center'>All Ideas</p>
           </div>
-          <div className='p-3 w-screen bg-[#F1F1F1] cursor-pointer'>
+          <div className='p-2 w-screen bg-[#F1F1F1] cursor-pointer'>
             <p
-              className={`text-xl font-bold text-[#FF6300] uppercase text-center ${dancingScript.className}`}
+              className={`text-lg font-bold text-[#FF6300] uppercase text-center ${dancingScript.className}`}
             >
               Log Out
             </p>

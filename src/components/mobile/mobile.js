@@ -1,6 +1,12 @@
 import MobileViewDashboard from '../mobile-view-dashboard/mobile-view-dashboard';
 
-export default function Mobile({ data, toggle, toggleForm, setIsToggleForm }) {
+export default function Mobile({
+  data,
+  toggle,
+  onToggle,
+  toggleForm,
+  setIsToggleForm,
+}) {
   return (
     <div className=''>
       {data.map((datum) => {
@@ -10,6 +16,7 @@ export default function Mobile({ data, toggle, toggleForm, setIsToggleForm }) {
             <MobileViewDashboard
               {...datum}
               toggle={toggle}
+              onToggle={onToggle}
               toggleForm={toggleForm}
               setIsToggleForm={setIsToggleForm}
             />

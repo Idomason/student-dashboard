@@ -1,8 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import { AiOutlineTwitter, AiOutlineGoogle } from 'react-icons/ai';
 import { SlSocialDribbble, SlSocialVkontakte } from 'react-icons/sl';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { Dancing_Script } from '@next/font/google';
+import { useState } from 'react';
+import convertToBase64 from '@/helper/convert';
+import avatar from '@/images/profile.png';
 
 const dancingScript = Dancing_Script({
   subsets: ['latin'],
@@ -10,7 +15,15 @@ const dancingScript = Dancing_Script({
 
 // 034377
 
-const Profile = ({ image, name, id, toggleForm, setIsToggleForm }) => {
+const Profile = ({
+  passport,
+  firstName,
+  lastName,
+  studentId,
+  toggleForm,
+  setIsToggleForm,
+  logout,
+}) => {
   return (
     <div className='w-full hidden md:block md:fixed md:top-0 md:left-0 md:w-[300px] bg-white rounded-r-[63px] shadow-2xl overflow-hidden'>
       <div className='flex items-center justify-center my-4'>
@@ -23,19 +36,21 @@ const Profile = ({ image, name, id, toggleForm, setIsToggleForm }) => {
       </div>
       <div className='flex flex-col items-center justify-center'>
         <div className='p-[0.25rem] w-[120px] h-[120px] bg-gradient-to-r from-[#4A0F54] to-[#FF6300] rounded-full'>
-          <Image
-            src={image}
-            alt='student passport'
-            width={120}
-            height={120}
-            className='rounded-full'
-          />
+          <label htmlFor='passport'>
+            <Image
+              src={passport || avatar}
+              alt='student passport'
+              width={120}
+              height={120}
+              className='rounded-full'
+            />
+          </label>
         </div>
         <h2 className='font-bold text-xs py-2'>
-          {name.firstName} {name.middleName} {name.lastName}
+          {firstName} {lastName}
         </h2>
         <p className='flex font-bold text-xs text-[rgb(74,15,84)]'>
-          ID: <span className='flex text-[#FF6300] pl-1'> {id}</span>
+          ID: <span className='flex text-[#FF6300] pl-1'> {studentId}</span>
         </p>
         <div className='py-2 text-[#4A0F54] flex'>
           <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full hover:cursor-pointer hover:text-[#FF6300] hover:border-[#FF6300]'>
@@ -62,7 +77,7 @@ const Profile = ({ image, name, id, toggleForm, setIsToggleForm }) => {
             className={`w-screen p-3 text-secondary bg-bgMain ${
               toggleForm === 1 ? 'bgGrad text-white' : ''
             } hover:bgGrad hover:text-white cursor-pointer`}
-            onClick={() => setIsToggleForm((toggleForm) => (toggleForm = 1))}
+            onClick={() => setIsToggleForm((toggleForm = 1))}
           >
             <p className='text-md uppercase text-center'>Dashboard</p>
           </div>
@@ -70,7 +85,7 @@ const Profile = ({ image, name, id, toggleForm, setIsToggleForm }) => {
             className={`p-3 w-screen text-secondary bg-bgMain ${
               toggleForm === 2 ? 'bgGrad text-white' : ''
             } hover:bgGrad hover:text-white cursor-pointer`}
-            onClick={() => setIsToggleForm((toggleForm) => (toggleForm = 2))}
+            onClick={() => setIsToggleForm((toggleForm = 2))}
           >
             <p className='text-md uppercase text-center'>Edit Profile</p>
           </div>
@@ -78,7 +93,7 @@ const Profile = ({ image, name, id, toggleForm, setIsToggleForm }) => {
             className={`p-3 w-screen text-secondary bg-bgMain ${
               toggleForm === 3 ? 'bgGrad text-white' : ''
             } hover:bgGrad hover:text-white cursor-pointer`}
-            onClick={() => setIsToggleForm((toggleForm) => (toggleForm = 3))}
+            onClick={() => setIsToggleForm((toggleForm = 3))}
           >
             <p className='text-md uppercase text-center'>Classes</p>
           </div>
@@ -86,7 +101,7 @@ const Profile = ({ image, name, id, toggleForm, setIsToggleForm }) => {
             className={`p-3 w-screen text-secondary bg-bgMain ${
               toggleForm === 4 ? 'bgGrad text-white' : ''
             } hover:bgGrad hover:text-white cursor-pointer`}
-            onClick={() => setIsToggleForm((toggleForm) => (toggleForm = 4))}
+            onClick={() => setIsToggleForm((toggleForm = 4))}
           >
             <p className='text-md uppercase text-center'>Materials</p>
           </div>
@@ -94,7 +109,7 @@ const Profile = ({ image, name, id, toggleForm, setIsToggleForm }) => {
             className={`p-3 w-screen text-secondary bg-bgMain ${
               toggleForm === 5 ? 'bgGrad text-white' : ''
             } hover:bgGrad hover:text-white cursor-pointer`}
-            onClick={() => setIsToggleForm((toggleForm) => (toggleForm = 5))}
+            onClick={() => setIsToggleForm((toggleForm = 5))}
           >
             <p className='text-md uppercase text-center'>Post Ideas</p>
           </div>
@@ -102,11 +117,14 @@ const Profile = ({ image, name, id, toggleForm, setIsToggleForm }) => {
             className={`p-3 w-screen text-secondary bg-bgMain ${
               toggleForm === 6 ? 'bgGrad text-white' : ''
             } hover:bgGrad hover:text-white cursor-pointer`}
-            onClick={() => setIsToggleForm((toggleForm) => (toggleForm = 6))}
+            onClick={() => setIsToggleForm((toggleForm = 6))}
           >
             <p className='text-md uppercase text-center'>All Ideas</p>
           </div>
-          <div className='p-3 w-screen bg-bgMain cursor-pointer'>
+          <div
+            className='p-3 w-screen bg-bgMain cursor-pointer'
+            onClick={logout}
+          >
             <p
               className={`text-xl font-bold text-primary uppercase text-center ${dancingScript.className}`}
             >

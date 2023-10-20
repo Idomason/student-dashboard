@@ -1,0 +1,107 @@
+'use client';
+
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { NextResponse } from 'next/server';
+import axios from 'axios';
+import { useState } from 'react';
+import { Toaster, toast } from 'react-hot-toast';
+
+export default function SignIn() {
+  const router = useRouter();
+  // const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+  });
+
+  async function handleSubmit(event) {
+    try {
+      event.preventDefault();
+
+      await axios.post('api/auth/signIn', user);
+
+      setUser({
+        email: '',
+        password: '',
+      });
+      toast.success('Login successful');
+      router.push('/dashboard');
+      console.log('Login successful');
+    } catch (error) {
+      toast.error('Login not successful');
+    }
+  }
+
+  return (
+    <section className='w-full h-screen flex justify-between'>
+      <Toaster position='top-center' reverseOrder={false} />
+      <div className='w-full bg-[#ffdba5] text-white text-center hidden md:block'>
+        <div className='h-full w-full p-0'>
+          <img
+            className='w-screen h-full object-cover'
+            src={
+              'https://media.istockphoto.com/id/1480281331/photo/young-black-female-working-on-laptop-computer-in-creative-office-in-the-evening-happy.webp?b=1&s=170667a&w=0&k=20&c=zRMYUyHpm9ni1O3kD3NDqSlWlBeVuZNR87vIuiN5UV8='
+            }
+            alt='Image'
+          />
+        </div>
+      </div>
+      <div className='w-full h-full bg-secondary text-white p-4 relative'>
+        <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary'>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <p className='lg:text-2xl md:text-xl font-bold py-4 '>
+                Login To Access Dashboard
+              </p>
+              <span className='inline-flex gap-10 my-3'>
+                <label htmlFor='authEmail'>Email</label>
+                <input
+                  className='p-1 focus:outline-none focus:ring-1 focus:ring-primary rounded-sm text-black'
+                  type='email'
+                  name='authEmail'
+                  id='authEmail'
+                  value={user.email}
+                  onChange={(event) =>
+                    setUser({ ...user, email: event.target.value })
+                  }
+                  placeholder='Enter email'
+                />
+              </span>
+              <span className='inline-flex gap-2'>
+                <label htmlFor='authPass'>Password</label>
+                <input
+                  className='p-1 text-black focus:outline-none focus:ring-1 focus:accent-primary focus:ring-primary rounded-sm'
+                  type='password'
+                  name='authPass'
+                  id='authPass'
+                  value={user.password}
+                  onChange={(event) =>
+                    setUser({ ...user, password: event.target.value })
+                  }
+                  placeholder='Enter password'
+                />
+              </span>
+            </div>
+            <button className='text-white py-4 text-center w-full'>
+              Sign In
+            </button>
+            <div className='mt-6'>
+              <span>
+                <p className='font-light text-sm inline-block mr-3'>
+                  Don't have an account yet?
+                </p>
+                <Link
+                  className='hover:transition-all hover:ease-in-out hover:text-white hover:underline '
+                  href='/signUp'
+                >
+                  Create Account
+                </Link>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
