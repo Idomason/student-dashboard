@@ -2,14 +2,12 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { NextResponse } from 'next/server';
 import axios from 'axios';
 import { useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 
 export default function SignIn() {
   const router = useRouter();
-  // const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -27,7 +25,6 @@ export default function SignIn() {
       });
       toast.success('Login successful');
       router.push('/dashboard');
-      console.log('Login successful');
     } catch (error) {
       toast.error('Login not successful');
     }
@@ -54,7 +51,7 @@ export default function SignIn() {
               <p className='lg:text-2xl md:text-xl font-bold py-4 '>
                 Login To Access Dashboard
               </p>
-              <span className='inline-flex gap-10 my-3'>
+              <span className='inline-flex gap-10 my-3 text-white'>
                 <label htmlFor='authEmail'>Email</label>
                 <input
                   className='p-1 focus:outline-none focus:ring-1 focus:ring-primary rounded-sm text-black'
@@ -68,7 +65,7 @@ export default function SignIn() {
                   placeholder='Enter email'
                 />
               </span>
-              <span className='inline-flex gap-2'>
+              <span className='inline-flex gap-2 text-white'>
                 <label htmlFor='authPass'>Password</label>
                 <input
                   className='p-1 text-black focus:outline-none focus:ring-1 focus:accent-primary focus:ring-primary rounded-sm'
@@ -83,12 +80,14 @@ export default function SignIn() {
                 />
               </span>
             </div>
-            <button className='text-white py-4 text-center w-full'>
-              Sign In
-            </button>
+            <div className='w-full flex items-center justify-center ml-7'>
+              <button className='text-white my-4 py-2 px-4 max-max bg-blue-500 hover:bg-blue-700 rounded-sm '>
+                Sign In
+              </button>
+            </div>
             <div className='mt-6'>
               <span>
-                <p className='font-light text-sm inline-block mr-3'>
+                <p className='font-light text-sm inline-block mr-3 text-white'>
                   Don't have an account yet?
                 </p>
                 <Link

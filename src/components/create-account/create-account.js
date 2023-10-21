@@ -268,7 +268,6 @@ export default function CreateAccount() {
                     className='checked:ring-1 checked:ring-primary text-slate-700'
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='MS Office Suits Expert'
                     // checked={careerPath.includes('MS Office Suits Expert')}
                     onChange={handleCheckbox}
@@ -281,7 +280,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='MS Office Suits Expert'
                     onChange={handleCheckbox}
                   />
@@ -293,7 +291,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='Digital Marketing'
                     onChange={handleCheckbox}
                   />
@@ -305,7 +302,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='Wordpress Developer'
                     onChange={handleCheckbox}
                   />
@@ -317,7 +313,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='Voice and Audio Editing'
                     onChange={handleCheckbox}
                   />
@@ -329,7 +324,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='Graphic Design'
                     onChange={handleCheckbox}
                   />
@@ -341,7 +335,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='Mobile App Developer'
                     onChange={handleCheckbox}
                   />
@@ -353,7 +346,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='Software Programming'
                     onChange={handleCheckbox}
                   />
@@ -365,7 +357,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='UI/UX Design'
                     onChange={handleCheckbox}
                   />
@@ -377,7 +368,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='Social Media Branding'
                     onChange={handleCheckbox}
                   />
@@ -389,7 +379,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='2D and 3D Animation'
                     onChange={handleCheckbox}
                   />
@@ -401,7 +390,6 @@ export default function CreateAccount() {
                   <input
                     type='checkbox'
                     name='careerPath'
-                    id='careerPath'
                     value='Data Analyst'
                     onChange={handleCheckbox}
                   />

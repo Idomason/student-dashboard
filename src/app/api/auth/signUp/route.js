@@ -32,7 +32,6 @@ export async function POST(request) {
       workType,
     } = reqBody;
 
-    // console.log(reqBody);
     // Check if user already exist
     const user = await User.findOne({ email });
 
@@ -44,15 +43,10 @@ export async function POST(request) {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // console.log(hashedPassword);
-
     // Save user to the database
     const newUser = new User({ ...reqBody, password: hashedPassword });
-    // console.log(newUser);
 
     const savedUser = await newUser.save();
-
-    console.log(savedUser);
 
     // Send verification email
     await sendEmail({ email, emailType: 'VERIFY', userId: savedUser._id });
