@@ -29,15 +29,15 @@ function Main({ users, toggleForm, setIsToggleForm }) {
         </div> */}
         <Header onAddQuery={handleQuery} />
         <Mobile
-          data={data}
+          data={users}
           toggle={query}
           onToggle={setQuery}
           toggleForm={toggleForm}
           setIsToggleForm={setIsToggleForm}
         />
         <section className='flex justify-center'>
-          {data.map((datum) => (
-            <IntroHeader key={datum.id} name={datum.name} users={users} />
+          {users.map((user) => (
+            <IntroHeader key={user._id} name={user.firstName} users={users} />
           ))}
         </section>
 

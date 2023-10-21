@@ -10,9 +10,9 @@ export default function Mobile({
   return (
     <div className=''>
       {data.map((datum) => {
-        const { id, name, image } = datum;
+        const { _id } = datum;
         return (
-          <div key={id}>
+          <div key={_id}>
             <MobileViewDashboard
               {...datum}
               toggle={toggle}

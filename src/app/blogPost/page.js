@@ -1,11 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata = {
-  title: 'Idea Posts',
-  description: 'These are ideas posted by our students',
-};
-
 async function getData() {
   const response = await fetch('http://localhost:3000/api/posts', {
     cache: 'no-store',

@@ -9,9 +9,10 @@ const dancingScript = Dancing_Script({
 });
 
 const MobileViewDashboard = ({
-  id,
-  image,
-  name,
+  _id,
+  passport,
+  firstName,
+  lastName,
   toggle,
   onToggle,
   toggleForm,
@@ -52,7 +53,7 @@ const MobileViewDashboard = ({
       <div className='flex flex-col items-center justify-center'>
         <div className='p-[0.25rem] mt-2 w-[120px] h-[120px] bg-gradient-to-r from-[#4A0F54] to-[#FF6300] rounded-full'>
           <Image
-            src={image}
+            src={passport}
             alt='student passport'
             width={120}
             height={120}
@@ -60,7 +61,7 @@ const MobileViewDashboard = ({
           />
         </div>
         <h2 className='font-bold text-xs py-2'>
-          {name.firstName} {name.middleName} {name.lastName}
+          {firstName} {lastName}
         </h2>
         <p className='flex font-bold text-xs text-[rgb(74,15,84)]'>
           ID: <span className='flex text-[#FF6300] pl-1'> {id}</span>
