@@ -91,7 +91,7 @@ export default function SignIn() {
             <div className='mt-6'>
               <span>
                 <p className='font-light text-sm inline-block mr-3 text-white'>
-                  Don't have an account yet?
+                  Dont have an account yet?
                 </p>
                 <Link
                   className='hover:transition-all hover:ease-in-out hover:text-white hover:underline '
