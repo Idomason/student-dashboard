@@ -5,7 +5,6 @@ import Form from '@/components/create-account/create-account';
 import StudentProfile from '@/components/student-profile/student-profile';
 import BlogPost from '@/app/blogPost/page';
 import Blog from '../../app/blog/page';
-import data from '../../../public/data/data.json';
 import IntroHeader from '@/components/intro-header/intro-header';
 import Header from '@/components/header/header';
 import Mobile from '@/components/mobile/mobile';
