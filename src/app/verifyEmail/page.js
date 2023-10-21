@@ -9,6 +9,7 @@ export default function VerifyEmail() {
   const [verified, setVerified] = useState(false);
   const [error, setError] = useState(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   async function verifyUserEmail() {
     try {
       await axios.post('/api/auth/verifyEmail', { token });
@@ -30,7 +31,7 @@ export default function VerifyEmail() {
         verifyUserEmail();
       }
     },
-    [token]
+    [token, verifyUserEmail]
   );
 
   return (
