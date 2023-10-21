@@ -1,12 +1,15 @@
 import CreateNewUser from '@/components/create-account/create-account';
+import Image from 'next/image';
 
 export default function SignUp() {
   return (
     <section className='w-full h-screen md:flex justify-between overflow-hidden'>
       <div className='w-1/2 bg-[#ffdba5] text-white text-center'>
         <div className='h-full w-full p-0'>
-          <img
+          <Image
             className='w-screen h-full hidden md:block object-cover'
+            width={120}
+            height={120}
             src={
               'https://media.istockphoto.com/id/1591625565/photo/programming-tablet-and-cyber-security-with-woman-in-office-for-research-software-or-coding.webp?b=1&s=170667a&w=0&k=20&c=u6G11zaU_XkqP11xoSZLBMrq4hZ6ItFuHHcLC6NXJdI='
             }

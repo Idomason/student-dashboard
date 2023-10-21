@@ -26,7 +26,9 @@ export default function VerifyEmail() {
 
   useEffect(
     function () {
-      if (token.length > 0) verifyUserEmail();
+      if (token.length > 0) {
+        verifyUserEmail();
+      }
     },
     [token]
   );

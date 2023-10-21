@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
+import Image from 'next/image';
 
 export default function SignIn() {
   const router = useRouter();
@@ -35,8 +36,10 @@ export default function SignIn() {
       <Toaster position='top-center' reverseOrder={false} />
       <div className='w-full bg-[#ffdba5] text-white text-center hidden md:block'>
         <div className='h-full w-full p-0'>
-          <img
+          <Image
             className='w-screen h-full object-cover'
+            width={120}
+            height={120}
             src={
               'https://media.istockphoto.com/id/1480281331/photo/young-black-female-working-on-laptop-computer-in-creative-office-in-the-evening-happy.webp?b=1&s=170667a&w=0&k=20&c=zRMYUyHpm9ni1O3kD3NDqSlWlBeVuZNR87vIuiN5UV8='
             }
