@@ -1,5 +1,6 @@
 'use client';
 
+import axios from 'axios';
 import { Inter } from '@next/font/google';
 
 import Button from '../../components/button/button';
@@ -15,17 +16,15 @@ export default function Blog() {
     const postDesc = event.target[2].value;
     const postContent = event.target[3].value;
 
+    const blog = {
+      postImage,
+      postTitle,
+      postDesc,
+      postContent,
+    };
+
     try {
-      const res = await fetch('api/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          postImage,
-          postTitle,
-          postDesc,
-          postContent,
-        }),
-      });
+      const res = await axios.post('api/posts', blog);
 
       res.status === 201 && router.push('/blog/?success=Post has been created');
     } catch (error) {

@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import axios from 'axios';
 
 async function getData(id) {
-  const response = await fetch(process.env.URL + `/api/posts/${id}`, {
-    cache: 'no-store',
-  });
+  const response = await axios.get(process.env.URL + `/api/posts/${id}`);
 
   if (!response.ok) {
     return notFound();
@@ -14,8 +13,8 @@ async function getData(id) {
   return response.json();
 }
 
-export async function generateMetadata({ params }) {
-  const post = await getData(params.id);
+export function generateMetadata({ params }) {
+  const post = getData(params.id);
 
   return {
     title: post.postTitle,

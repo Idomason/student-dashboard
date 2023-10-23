@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import axios from 'axios';
 
 async function getData() {
-  const response = await fetch(process.env.URL + '/api/posts', {
-    cache: 'no-store',
-  });
+  const response = await axios.get(process.env.URL + '/api/posts');
 
   if (!response.ok) {
     throw new Error('Failed to fetch data');
@@ -15,8 +14,8 @@ async function getData() {
   return ideas;
 }
 
-export default async function Ideas() {
-  const ideas = await getData();
+export default function Ideas() {
+  const ideas = getData();
 
   const date = new Date(ideas.map((idea) => idea.createdAt));
   const postCreatedOn = date.toLocaleString('en-GB', {
