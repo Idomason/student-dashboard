@@ -3,7 +3,7 @@ import Image from 'next/image';
 import axios from 'axios';
 
 async function getData() {
-  const response = await axios.get(process.env.URL + '/api/posts');
+  const response = await axios.get('/api/posts');
 
   if (!response.ok) {
     throw new Error('Failed to fetch data');

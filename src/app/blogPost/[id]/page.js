@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import axios from 'axios';
 
 async function getData(id) {
-  const response = await axios.get(process.env.URL + `/api/posts/${id}`);
+  const response = await axios.get(`/api/posts/${id}`);
 
   if (!response.ok) {
     return notFound();
