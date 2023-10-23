@@ -13,7 +13,6 @@
     "autoprefixer": "10.4.14",
     "axios": "^1.5.1",
     "bcryptjs": "^2.4.3",
-    "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.2",
