@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 async function getData() {
-  const response = await fetch('http://localhost:3000/api/posts', {
+  const response = await fetch(process.env.URL + '/api/posts', {
     cache: 'no-store',
   });
 

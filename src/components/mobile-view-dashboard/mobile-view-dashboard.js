@@ -3,13 +3,14 @@ import { AiOutlineTwitter, AiOutlineGoogle } from 'react-icons/ai';
 import { SlSocialDribbble, SlSocialVkontakte } from 'react-icons/sl';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { Dancing_Script } from '@next/font/google';
+import avatar from '@/images/profile.png';
 
 const dancingScript = Dancing_Script({
   subsets: ['latin'],
 });
 
 const MobileViewDashboard = ({
-  _id,
+  studentId,
   passport,
   firstName,
   lastName,
@@ -51,20 +52,22 @@ const MobileViewDashboard = ({
       } md:absolute md:top-0 md:left-0 bottom-0 md:w-[300px] md:hidden block absolute top-[62px] left-0 bg-white shadow-2xl transition-all duration-300 ease-in-out delay-100`}
     >
       <div className='flex flex-col items-center justify-center'>
-        <div className='p-[0.25rem] mt-2 w-[120px] h-[120px] bg-gradient-to-r from-[#4A0F54] to-[#FF6300] rounded-full'>
-          <Image
-            src={passport}
-            alt='student passport'
-            width={120}
-            height={120}
-            className='rounded-full'
-          />
+        <div className='p-[0.25rem] w-[120px] h-[120px] bg-gradient-to-r from-[#4A0F54] to-[#FF6300] rounded-full'>
+          <label htmlFor='passport'>
+            <Image
+              src={passport || avatar}
+              alt='student passport'
+              width={120}
+              height={120}
+              className='rounded-full'
+            />
+          </label>
         </div>
         <h2 className='font-bold text-xs py-2'>
           {firstName} {lastName}
         </h2>
         <p className='flex font-bold text-xs text-[rgb(74,15,84)]'>
-          ID: <span className='flex text-[#FF6300] pl-1'> {id}</span>
+          ID: <span className='flex text-[#FF6300] pl-1'> {studentId}</span>
         </p>
         <div className='py-2 text-[#4A0F54] flex'>
           <div className='p-1 flex items-center justify-center border-[1px] border-solid border-[#4A0F54] rounded-full hover:cursor-pointer hover:text-[#FF6300] hover:border-[#FF6300]'>

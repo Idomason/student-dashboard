@@ -5,8 +5,6 @@ import { AiOutlineTwitter, AiOutlineGoogle } from 'react-icons/ai';
 import { SlSocialDribbble, SlSocialVkontakte } from 'react-icons/sl';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { Dancing_Script } from '@next/font/google';
-import { useState } from 'react';
-import convertToBase64 from '@/helper/convert';
 import avatar from '@/images/profile.png';
 
 const dancingScript = Dancing_Script({
