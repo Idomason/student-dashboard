@@ -1,5 +1,6 @@
 import CreateNewUser from '@/components/create-account/create-account';
 import Image from 'next/image';
+import profileImg from '@/images/wooman.png';
 
 export default function SignUp() {
   return (
@@ -10,9 +11,7 @@ export default function SignUp() {
             className='w-screen h-full hidden md:block object-cover'
             width={120}
             height={120}
-            src={
-              'https://media.istockphoto.com/id/1591625565/photo/programming-tablet-and-cyber-security-with-woman-in-office-for-research-software-or-coding.webp?b=1&s=170667a&w=0&k=20&c=u6G11zaU_XkqP11xoSZLBMrq4hZ6ItFuHHcLC6NXJdI='
-            }
+            src={profileImg}
             alt='Image'
           />
         </div>

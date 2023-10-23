@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import Image from 'next/image';
+import profileImg from '@/images/woman.png';
 
 export default function SignIn() {
   const router = useRouter();
@@ -40,9 +41,7 @@ export default function SignIn() {
             className='w-screen h-full object-cover'
             width={120}
             height={120}
-            src={
-              'https://media.istockphoto.com/id/1480281331/photo/young-black-female-working-on-laptop-computer-in-creative-office-in-the-evening-happy.webp?b=1&s=170667a&w=0&k=20&c=zRMYUyHpm9ni1O3kD3NDqSlWlBeVuZNR87vIuiN5UV8='
-            }
+            src={profileImg}
             alt='Image'
           />
         </div>
@@ -91,7 +90,7 @@ export default function SignIn() {
             <div className='mt-6'>
               <span>
                 <p className='font-light text-sm inline-block mr-3 text-white'>
-                  Dont have an account yet?
+                  Don&apos;t have an account yet?
                 </p>
                 <Link
                   className='hover:transition-all hover:ease-in-out hover:text-white hover:underline '
